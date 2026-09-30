@@ -6,7 +6,9 @@ name = "Alundra"
 id = "SLES-01135"
 players = 1
 exe = "disc/SLES_011.35"
-disc = ""
+disc = "disc/Alundra (Europe).cue"
+discs = ["disc/Alundra (Europe).cue"]
+disc_serials = ["SLES-01135"]
 load_address = "0x80020000"
 entry_pc = "0x80035E54"
 text_size = "0x0012A000"
@@ -15,8 +17,8 @@ stack_base = "0x801FFFF0"
 # Digests are for data Track 01 (first BINARY FILE / TRACK 01).
 [prepare_disc]
 out_dir = "disc"
-bin_name = "disc1.bin"
-cue_name = "disc1.cue"
+bin_name = "Alundra (Europe).bin"
+cue_name = "Alundra (Europe).cue"
 boot_exe = "SLES_011.35"
 known_sizes = [606013968]
 known_md5 = [
@@ -30,11 +32,13 @@ known_crc32 = [
 ]
 
 [recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
 [runtime]
+openbios = false
 window_title = "alundra- Recompiled"
 memcard_dir = "saves"
 
